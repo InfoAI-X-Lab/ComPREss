@@ -1,4 +1,4 @@
-# antiSMASH Genome Workflow
+# AutoMCluster Workflow
 
 ## Overview
 This repository has two stages:
