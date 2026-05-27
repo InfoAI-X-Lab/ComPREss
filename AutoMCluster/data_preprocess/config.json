@@ -1,0 +1,52 @@
+{
+  "pipeline": {
+    "show_step_summary": true,
+    "stop_on_error": true
+  },
+  "execution_order": [
+    "fna_filter",
+    "deduplicate",
+    "stat_length",
+    "length_filter",
+    "nz_to_gcf",
+    "final_gcf",
+    "count_fna"
+  ],
+  "steps": {
+    "fna_filter": {
+      "enabled": true,
+      "blacklist_csv": "D:/data/blacklist.csv",
+      "input_folder": "D:/data/raw_fna_gz",
+      "output_dir": "D:/data/clean_fna"
+    },
+    "deduplicate": {
+      "enabled": true,
+      "input_dir": "D:/data/clean_fna"
+    },
+    "stat_length": {
+      "enabled": true,
+      "input_folder": "D:/data/clean_fna"
+    },
+    "length_filter": {
+      "enabled": true,
+      "input_folder": "D:/data/clean_fna",
+      "output_dir": "D:/data/clean_900_fna"
+    },
+    "nz_to_gcf": {
+      "enabled": true,
+      "map_file": "D:/data/assembly_summary.ass.gz",
+      "input_dir": "D:/data/clean_900_fna",
+      "output_dir": "D:/data/clean_gcf"
+    },
+    "final_gcf": {
+      "enabled": true,
+      "map_file": "D:/data/assembly_summary.ass.gz",
+      "input_dir": "D:/data/clean_gcf",
+      "output_dir": "D:/data/final_gcf"
+    },
+    "count_fna": {
+      "enabled": true,
+      "target_path": "D:/data/final_gcf"
+    }
+  }
+}
