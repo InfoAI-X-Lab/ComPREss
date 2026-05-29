@@ -16,7 +16,6 @@ The current version is intended to present the main structure and methodological
 |-- README.md
 |-- requirements.txt
 |-- .gitignore
-|-- __init__.py
 |-- data.py
 |-- data_augmentation.py
 |-- evaluate.py
